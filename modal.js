@@ -122,3 +122,34 @@ document.getElementById('requestForm').onsubmit = async function(event) {
     modal.style.display = 'none';
 };
 
+-----
+document.getElementById('requestForm').onsubmit = async function(event) {
+    event.preventDefault();
+    const formData = {
+        customer: document.getElementById('customer').value,
+        environment: document.getElementById('cloud').value,
+        remarks: document.getElementById('remarks').value
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/save_request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert('Form submitted successfully!');
+        } else {
+            alert('Error: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to submit the form.');
+    }
+
+    modal.style.display = 'none';
+};
