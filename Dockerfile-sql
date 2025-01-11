@@ -13,3 +13,8 @@ EXPOSE 3306
 
 # Start MySQL server
 CMD ["mysqld"]
+
+# Build and run the MySQL container
+  # docker build -f Dockerfile-sql -t mysql-custom .
+  # docker run -d --name mysql-container -p 3306:3306 mysql-custom
+  # docker exec -it <container-id>  bash
