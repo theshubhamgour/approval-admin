@@ -94,3 +94,31 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+document.getElementById('requestForm').onsubmit = async function(event) {
+    event.preventDefault();
+    const formData = {
+        customer: document.getElementById('customer').value,
+        environment: document.getElementById('cloud').value,
+        remarks: document.getElementById('remarks').value
+    };
+
+    // Send form data to the server
+    const response = await fetch('/save_request', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    if (result.success) {
+        alert('Form submitted successfully!');
+    } else {
+        alert('Error submitting form.');
+    }
+
+    modal.style.display = 'none';
+};
+
