@@ -4,8 +4,6 @@ FROM mysql:8.0
 # Set environment variables for MySQL configuration
 ENV MYSQL_ROOT_PASSWORD=Admin123#
 ENV MYSQL_DATABASE=request_management
-ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD=Admin123#
 
 # Copy the database schema and initial data setup script (if any)
 COPY ./init.sql /docker-entrypoint-initdb.d/
