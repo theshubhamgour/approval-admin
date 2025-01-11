@@ -2,8 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 
-// Create an Express application
-const app = express();
+const app = express(); // Initialize the app
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -23,6 +22,11 @@ db.connect((err) => {
         return;
     }
     console.log('Connected to MySQL database.');
+});
+
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Server is running!');
 });
 
 // Define a route to handle form submissions
