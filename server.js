@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'pass123#',
-    database: 'your_database_name'
+    password: 'Admin123#',
+    database: 'request_management'
 });
 
 // Connect to the database
