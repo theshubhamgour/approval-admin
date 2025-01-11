@@ -12,19 +12,13 @@ const modalContent = `
                 <label for="customer">Select or enter Customer:</label>
                 <input type="text" id="customer" required>
 
-                <label for="environment">Environment:</label>
-                <input type="text" id="environment" required>
-
-                <label for="cloud">Cloud:</label>
+                <label for="cloud">Environment:</label>
                 <select id="cloud" required>
                     <option value="">Select</option>
-                    <option value="aws">AWS</option>
-                    <option value="azure">Azure</option>
+                    <option value="aws">Development</option>
+                    <option value="azure">Validation</option>
+                    <option value="azure">Production</option>
                 </select>
-
-                <label for="backupType">Backup Type:</label>
-                <input type="radio" name="backupType" value="single" required> Single DB
-                <input type="radio" name="backupType" value="withBackup"> With Backup DB
 
                 <label for="remarks">Remarks:</label>
                 <textarea id="remarks" required>Please specify the reason for the access</textarea>
