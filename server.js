@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const path = require('path'); // Import path module
 
 const app = express(); // Initialize the app
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up the MySQL connection
 const db = mysql.createConnection({
@@ -26,7 +30,7 @@ db.connect((err) => {
 
 // Define a route for the root URL
 app.get('/', (req, res) => {
-    res.send('Server is running!');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Define a route to handle form submissions
