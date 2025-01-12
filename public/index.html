@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Management</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400 ```html
-;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <button id="newRequestBtn">New Request</button>
-        <button id="allRequestBtn">All Request</button>
+        <div class="button-container">
+            <button id="newRequestBtn">New Request</button>
+            <button id="allRequestBtn">All Request</button>
+        </div>
+        <button id="loginBtn" class="login-button">Login</button>
     </header>
     <main>
         <table>
@@ -29,7 +31,7 @@
             </tbody>
         </table>
     </main>
-    <script src="allRequests.js"></script> <!-- Ensure this is linked -->
+    <script src="allRequests.js"></script>
     <script src="modal.js"></script>
 </body>
 </html>
