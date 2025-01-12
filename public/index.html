@@ -4,40 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Management</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400 ```html
+;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">My Requests</a></li>
-                <li><a href="#">Request Approvals</a></li>
-            </ul>
-        </nav>
         <button id="newRequestBtn">New Request</button>
+        <button id="allRequestBtn">All Request</button>
     </header>
     <main>
         <table>
             <thead>
                 <tr>
-                    <th>S.No.</th>
-                    <th>Request No.</th>
-                    <th>Request Type</th>
-                    <th>Assigned To</th>
-                    <th>Status</th>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Environment</th>
                     <th>Remarks</th>
-                    <th>Actions</th>
+                    <th>Created At</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td colspan="7">No Data Available</td>
-                </tr>
+            <tbody id="requestTableBody">
+                <!-- Rows will be dynamically inserted here -->
             </tbody>
         </table>
     </main>
-    <script src="#"></script> <!-- Link to JavaScript file -->
-    <script src="modal.js"></script> <!-- Link to modal JavaScript file -->
-    <script src="#"></script> <!-- Link to another JavaScript file -->
+    <script src="allRequests.js"></script> <!-- Ensure this is linked -->
+    <script src="modal.js"></script>
 </body>
 </html>

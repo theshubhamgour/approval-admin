@@ -1,70 +1,117 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Header Styling */
 header {
-    background: #007bff;
+    background: linear-gradient(135deg, #007bff, #00bfff);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-button {
+header button {
     background: #28a745;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+header button:hover {
     background: #218838;
+    transform: scale(1.05);
 }
 
-/* Table Styles */
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
 }
 
 th {
     background-color: #007bff;
     color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 tr:hover {
     background-color: #f1f1f1;
+    transition: background 0.3s ease;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    nav ul li {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table, thead, tbody, th, td, tr {
         display: block;
-        margin: 5px 0;
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
     }
 }
