@@ -71,11 +71,11 @@ style.innerHTML = `
         align-items: center;
     }
     .modal-header {
-        background: #007bff;
+        background: #8da3ba;
         color: white;
         padding: 10px;
-        width: 100%;
-        text-align: right;
+        width: 10%;
+        text-align: center;
     }
     .modal-body {
         background: white;
