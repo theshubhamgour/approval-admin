@@ -54,6 +54,19 @@ app.post('/save_request', (req, res) => {
     });
 });
 
+app.get('/get_requests', (req, res) => {
+    const query = 'SELECT * FROM requests';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching requests:', err);
+            return res.status(500).json({ success: false, message: 'Database error.' });
+        }
+
+        console.log('Fetched requests:', results); // Debugging: Check the fetched data
+        res.json({ success: true, requests: results });
+    });
+});
+
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
