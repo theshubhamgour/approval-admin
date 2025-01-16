@@ -3,25 +3,30 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+    background: linear-gradient(135deg, #F5EFFF, #F5EFFF);
     color: #333;
     line-height: 1.6;
 }
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #007bff, #00bfff);
-    color: white;
+    background: linear-gradient(135deg, #CDC1FF, #CDC1FF);
+    color: #F5EFFF;
     padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
 }
 
 header button {
-    background: #28a745;
-    color: white;
+    background: #A294F9;
+    color: #F5EFFF;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -31,7 +36,23 @@ header button {
 }
 
 header button:hover {
-    background: #218838;
+    background: #3320af;
+    transform: scale(1.05);
+}
+
+.login-button {
+    background: #A294F9;
+    color: #91879c;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+    background: #3320af;
     transform: scale(1.05);
 }
 
@@ -57,8 +78,8 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+    background-color: #91879c;
+    color: #F5EFFF;
     font-weight: bold;
 }
 
@@ -102,7 +123,6 @@ tr:hover {
         border: none;
         border-bottom: 1px solid #eee;
         position: relative;
-        padding-left: 50%;
     }
 
     td:before {

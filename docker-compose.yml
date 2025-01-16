@@ -16,15 +16,15 @@ services:
       - app-network
 
   mysql:
-    build:
-      context: .
-      dockerfile: Dockerfile-sql
+    image: mysql:8
     container_name: mysql-container
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: Admin123#
       MYSQL_DATABASE: request_management
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
       - app-network
 

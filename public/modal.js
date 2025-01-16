@@ -4,11 +4,12 @@ const modal = document.createElement('div');
 const modalContent = `
     <div class="modal">
         <div class="modal-header">
-            <h2>Approval Forms</h2>
+            
             <button id="closeModalBtn">&times;</button>
         </div>
         <div class="modal-body">
             <form id="requestForm">
+            <h2>Approval Forms</h2>
                 <label for="customer">Select or enter Customer:</label>
                 <input type="text" id="customer" required>
 
@@ -71,11 +72,32 @@ style.innerHTML = `
         align-items: center;
     }
     .modal-header {
-        background: #007bff;
+        background:rgb(205, 203, 221);
         color: white;
         padding: 10px;
-        width: 100%;
-        text-align: right;
+        width: 20%;
+        text-align: center; /* Center the title */
+        position: relative;
+    }
+    .modal-header h2 {
+        margin: 0;
+    }
+    .modal-header button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+    .modal-header button:hover {
+        background: none; /* Remove hover effect */
+        color: white;
     }
     .modal-body {
         background: white;
