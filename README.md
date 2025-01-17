@@ -3,10 +3,13 @@
 This project is a simple web-based request management system that allows users to create and view requests. The system provides a user-friendly interface to manage requests, including details such as customer information, environment, remarks, and creation time.
 
 ## Features
+![Screen Recording 2025-01-17 at 7 36 02 AM (1)](https://github.com/user-attachments/assets/df97a1df-604f-46b6-87c4-0b5209d455fb)
+
 - **Create New Requests**: Users can create new requests using the "New Request" button.
 - **View All Requests**: Users can view all existing requests in a tabular format.
 - **Dynamic Table**: The table is dynamically populated with request data.
 - **Responsive Design**: The interface is designed to be responsive and works well on different screen sizes.
+
 
 ## Technologies Used
 - **HTML5**: For structuring the web page.
