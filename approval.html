@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="button-container">
+            <button id="newRequestBtn">New Request</button>
+            <button id="allRequestBtn">All Request</button>
+            <button id="logoutBtn" style="float: right;">Logout</button>
+        </div>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Environment</th>
+                    <th>Remarks</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody id="requestTableBody">
+                <!-- Rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+    <script src="allRequests.js"></script>
+    <script src="modal.js"></script>
+    <script>
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            window.location.href = '/index.html';
+        });
+    </script>
+</body>
+</html>
