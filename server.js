@@ -148,6 +148,26 @@ app.get('/logout', (req, res) => {
     res.redirect('/index.html');
 });
 
+app.post('/signup', (req, res) => {
+    const { full_name, username, password } = req.body;
+  
+    // Validate input
+    if (!full_name || !username || !password) {
+      return res.status(400).json({ success: false, message: 'All fields are required.' });
+    }
+  
+    // Insert data into the database
+    const query = 'INSERT INTO user_authentication (full_name, username, password) VALUES (?, ?, ?)';
+    db.query(query, [full_name, username.toLowerCase(), password], (err, result) => {
+      if (err) {
+        console.error('Error inserting data:', err);
+        return res.status(500).json({ success: false, message: 'Database error.' });
+      }
+  
+      res.json({ success: true, message: 'Signup successful.' });
+    });
+  });
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
