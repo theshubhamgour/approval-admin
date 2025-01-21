@@ -1,0 +1,26 @@
+version: '3'
+services:
+  ui:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=Admin123#
+      - DB_NAME=request_management
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=Admin123#
+      - MYSQL_DATABASE=request_management
+      - MYSQL_USER=root
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
